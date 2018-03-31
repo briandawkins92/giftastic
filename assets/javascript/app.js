@@ -57,19 +57,41 @@ for (var i=0; i < results.length; i++) {
 
  var personImage = $("<img>");
 
- personImage.attr("src", results[i].images.fixed_height.url);
+ personImage.attr("src", results[i].images.original_still.url);
+personImage.attr("data-still", results[i].images.original_still.url);
+personImage.attr("data-animate", results[i].images.original.url);
+personImage.attr("data-state", "still");
+personImage.attr("class", "gif");
 
  gifDiv.append(p);
  gifDiv.append(personImage);
  $("#gifs-appear-here").prepend(gifDiv);
 
 
-}
 
+
+$(".gif").on("click", function() {
+    var state = $(this).attr("data-state");
+    if (state === "still") {
+        personImage.attr("data-state", "animate"); 
+        personImage.attr("src", $(this).attr("data-animate"));
+      } else {
+    personImage.attr("src", $(this).attr("data-still"));
+        personImage.attr("data-state", "still");
+      }
+    
+
+
+})
+
+}
 });
 
 })
 }
 showGifs ();
+
+
+
 })
 /* END JAVASCRIPT*/
