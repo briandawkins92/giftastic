@@ -73,11 +73,11 @@ personImage.attr("class", "gif");
 $(".gif").on("click", function() {
     var state = $(this).attr("data-state");
     if (state === "still") {
-        personImage.attr("data-state", "animate"); 
-        personImage.attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate"); 
+        $(this).attr("src", $(this).attr("data-animate"));
       } else {
-    personImage.attr("src", $(this).attr("data-still"));
-        personImage.attr("data-state", "still");
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
       }
     
 
