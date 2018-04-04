@@ -85,4 +85,3 @@ $(".gif").on("click", function() {
 }
 showGifs ();
 })
-/* END JAVASCRIPT*/
